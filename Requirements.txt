@@ -1,0 +1,4 @@
+openai
+streamlit
+promptlayer
+docx2txt
