@@ -1,18 +1,20 @@
 import openai
 import streamlit as st
+import docx2txt
 
 import promptlayer
-promptlayer.api_key = "pl_24c0d07de627be146bd5327daa373694"
+import NotesSumConfig
+promptlayer.api_key = NotesSumConfig.promptlayer_api
 
 
-text = st.file_uploader("Choose a Notes file")
+file = st.file_uploader('Upload PDF File', type=[ 'docx'])
 # extract text
-if text:
-
+if file:
+    text = docx2txt.process(file)
 
     # Swap out your 'import openai'
     openai = promptlayer.openai
-    openai.api_key = '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'
+    openai.api_key = NotesSumConfig.openai_api
 
     # Do something fun 🚀
     summary = openai.Completion.create(
