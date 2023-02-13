@@ -7,7 +7,7 @@ import promptlayer
 
 promptlayer.api_key = st.secrets["promptlayer_api"]
 
-file = st.file_uploader('Upload PDF File', type=[ 'docx'])
+file = st.file_uploader('Upload Notes File (.docx)', type=[ 'docx'])
 # extract text
 if file:
     text = docx2txt.process(file)
