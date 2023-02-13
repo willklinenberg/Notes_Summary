@@ -3,8 +3,7 @@ import streamlit as st
 import docx2txt
 
 import promptlayer
-import Notes_config
-promptlayer.api_key = Notes_config.promptlayer_api
+promptlayer.api_key = PROMPT_LAYER_API_KEY
 
 
 file = st.file_uploader('Upload PDF File', type=[ 'docx'])
@@ -14,7 +13,7 @@ if file:
 
     # Swap out your 'import openai'
     openai = promptlayer.openai
-    openai.api_key = Notes_config.openai_api
+    openai.api_key = OPEN_AI_API_KEY
 
     # Do something fun 🚀
     summary = openai.Completion.create(
