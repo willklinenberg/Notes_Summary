@@ -2,3 +2,4 @@ openai
 streamlit
 promptlayer
 docx2txt
+Notes_config.py
